@@ -13,7 +13,7 @@ Requires podman and hegemone-server and postgres container
 2. Create a pod
 
     ```
-    podman pod create -n hegemone -p 8080:8080 -p 5432:5432 -p 3000:3000
+    podman pod create -n hegemone -p 8080:8080 -p 3000:3000
     ```
 
 3. Add postgres container
