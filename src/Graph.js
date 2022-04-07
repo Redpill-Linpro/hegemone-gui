@@ -77,7 +77,7 @@ class Graph extends React.Component {
 		},
 		title: {
 		    display: true,
-              text: 'Line Chart for ' + this.props.device_id,
+              text: 'Extended PAR spectrum chart for  ' + this.props.device_id,
 		},
             },
         };
@@ -127,12 +127,13 @@ class Graph extends React.Component {
             ],
           };
 	const spectral_labels = ["violet 415nm","blue 445nm","blue 480nm", "green 515nm",
-				 "green 555nm", "green 590nm", "red 630nm", "red 680nm", "near ir 910 nm", "clear 350-1000 nm"];	
+				 "green 555nm", "green 590nm", "red 630nm", "red 680nm", "near ir 910 nm", "clear 350-1000 nm"];
+	console.log(items[0]);
 	const spectral_data = {
 	    labels: spectral_labels,
 	    datasets: [{
 		label: 'Spectral measurement',
-		data: items.at(-1).spectral_data,
+		data: items.length ? items.at(-1).spectral_data : [],
 		backgroundColor: [
 		    'rgba(118, 0, 237, 1)',
 		    'rgba(0,40,255, 1)',
